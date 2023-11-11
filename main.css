@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto, sans-serif;
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex; /* deixa lado a lado */
+    border-bottom: 16px solid #341f97;
+    justify-content: center; /* Centraliza o conteúdo */
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0; /*Espaçamento Interno*/
+    text-align: center;
+    display: none; /*Vamos fazer o form surgir usando comandos do jQuerty*/
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input, button {
+    padding: 8px;
+}
+
+button {
+    background-color:#009432;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    display: flex; /*Elementos alinhados lado a lado*/
+    flex-wrap: wrap; /*Quando chega no limite da página, cria uma nova linha*/
+}
+
+ul li {
+    max-width: 25%;
+    max-height: 280px;
+    list-style: none; /*Remove o ponto de lista que é aplicado por padrão*/
+    position: relative; /*position relative para seguir de referência ao absolute*/
+    overflow-y: hidden; /*overflow é o comando que corta ou esconde parte das imagens, no hidden ela esconde o que sobra do tamanho estabelecido*/
+}
+
+ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7); /*modo de cor RGBA é para colocar transparência*/
+    position: absolute; /*posicionando o objeto que quando está absolute ele tem que estar ligado ao pai que é o relative*/
+    bottom: 0; /*Ajustando o posicionamento abaixo do relative*/
+    left: 0; /*Ajustando o posicionamento a esquerda do relative*/
+    width: 100%; /*Ajustando o tanto que vai ocupar junto do relative*/
+    opacity: 0; /*Ajustando a opacidade da barra que vai de 0 a 1 e é definida nos decimais*/
+    transition: all ease .5s; /*aplica um efeito de transição. transition: parte - de onde - tempo (o . amtes é para dizer que é mejnos que 1 segundo, no caso 0.5 */
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link { /*Aplicando um efeito de qdo o mouse estiver em cima ele vai aparecer*/
+    opacity: 1;
+}
